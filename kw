@@ -1,0 +1,276 @@
+echo "# speaker" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/kaciebuzzard-rgb/speaker.git
+git push -u origin main
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kacie Wielgus | Speaker & Consultant</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== GLOBAL ===== */
+
+body{
+margin:0;
+font-family:'Open Sans',sans-serif;
+color:#222;
+scroll-behavior:smooth;
+}
+
+h1,h2,h3{
+font-family:'Montserrat',sans-serif;
+margin:0;
+}
+
+section{
+padding:90px 10%;
+}
+
+/* ===== NAV ===== */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:white;
+display:flex;
+justify-content:center;
+gap:30px;
+padding:15px;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+z-index:1000;
+}
+
+nav a{
+text-decoration:none;
+color:#222;
+font-weight:600;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+height:100vh;
+background:url("https://static.wixstatic.com/media/7844cf_b008259013fe408b924e83fbd267eb5a~mv2.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+padding-top:60px;
+}
+
+.overlay{
+background:rgba(0,0,0,.45);
+padding:50px;
+border-radius:12px;
+color:white;
+text-align:center;
+max-width:700px;
+opacity:0;
+transform:translateY(20px);
+transition:1s;
+}
+
+.overlay.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.hero h1{
+font-size:48px;
+}
+
+.hero p{
+font-size:20px;
+margin-top:10px;
+}
+
+.btn{
+margin-top:20px;
+padding:14px 28px;
+background:#e08a1d;
+border:none;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* ===== GRID ===== */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+padding:25px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+border-radius:10px;
+}
+
+/* ===== CONTACT ===== */
+
+.contact{
+background:#f5f5f5;
+}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:700px){
+.hero h1{font-size:34px;}
+section{padding:70px 7%;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+<a href="#speaking">Speaking</a>
+<a href="#consulting">Consulting</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+<div class="overlay" id="heroBox">
+<h1>Kacie Wielgus (Buzzard)</h1>
+<p>Keynote Speaker • Social Media Strategist • Inclusion Consultant</p>
+<button class="btn" onclick="scrollContact()">Book Kacie</button>
+</div>
+</div>
+
+<!-- SPEAKING -->
+<section id="speaking">
+<h2>Speaking</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Human-Centered Communication</h3>
+<p>Helping organizations communicate with empathy, clarity, and trust.</p>
+</div>
+
+<div class="card">
+<h3>Authentic Storytelling</h3>
+<p>How leaders use story to connect, influence, and inspire action.</p>
+</div>
+
+<div class="card">
+<h3>Neurodiversity & Inclusion</h3>
+<p>Moving beyond awareness toward meaningful belonging.</p>
+</div>
+
+</div>
+</section>
+
+<!-- CONSULTING -->
+<section id="consulting">
+<h2>Consulting</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Social Media Strategy</h3>
+<p>Transform content into engagement and measurable growth.</p>
+</div>
+
+<div class="card">
+<h3>Executive Thought Leadership</h3>
+<p>Build authentic digital presence for leaders and organizations.</p>
+</div>
+
+<div class="card">
+<h3>Inclusion Consulting</h3>
+<p>Create accessible communication and inclusive culture.</p>
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Kacie</h2>
+
+<p>
+Kacie Wielgus is a communications strategist, keynote speaker, and inclusion consultant with nearly two decades of experience leading digital engagement for global brands and mission-driven organizations.
+</p>
+
+<p>
+Blending professional expertise with lived caregiving experience, she helps organizations communicate more authentically and build cultures where people feel seen, understood, and valued.
+</p>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<h2>Book Kacie</h2>
+
+<form onsubmit="submitForm(event)">
+<input type="text" placeholder="Name" required>
+<input type="email" placeholder="Email" required>
+<textarea placeholder="Message"></textarea>
+<button class="btn">Send Inquiry</button>
+</form>
+
+<p id="success"></p>
+
+</section>
+
+<footer>
+© 2026 Kacie Wielgus | All Rights Reserved
+</footer>
+
+<script>
+
+/* HERO FADE IN */
+window.onload = function(){
+document.getElementById("heroBox").classList.add("show");
+}
+
+/* SCROLL */
+function scrollContact(){
+document.getElementById("contact")
+.scrollIntoView({behavior:"smooth"});
+}
+
+/* FORM */
+function submitForm(e){
+e.preventDefault();
+document.getElementById("success")
+.innerText="Thank you! Your message has been sent.";
+}
+
+</script>
+
+</body>
+</html>
