@@ -1,0 +1,23 @@
+---
+title: Excerpts
+permalink: /excerpts/
+---
+
+<div class="card-grid">
+{% assign items = site.excerpts | sort: "order" %}
+{% for x in items %}
+<a class="card-link" href="{{ x.url }}">
+
+<img class="card-img"
+src="{{ x.image }}"
+alt="{{ x.title }}">
+
+<div class="card-body">
+<div class="tag">Excerpt</div>
+<h3>{{ x.title }}</h3>
+<p class="meta">{{ x.scene }}</p>
+</div>
+
+</a>
+{% endfor %}
+</div>
