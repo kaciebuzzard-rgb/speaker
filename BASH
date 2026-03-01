@@ -21,3 +21,6 @@ git mv waiting _excerpts/waiting.md
 
 # rename index
 git mv index excerpts.md
+git add index.html
+git commit -m "Remove Jekyll layout from index"
+git push
