@@ -4,3 +4,5 @@ collections:
   excerpts:
     output: true
     permalink: /excerpts/:name/
+layout: default
+---
