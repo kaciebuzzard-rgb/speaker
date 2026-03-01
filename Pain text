@@ -1,0 +1,8 @@
+speaker/
+├── _config.yml
+├── _layouts/
+│   └── default.html
+├── index.md
+├── excerpts.md
+└── _excerpts/
+    └── the-chair.md
