@@ -1,0 +1,23 @@
+# create config
+cat > _config.yml <<'YML'
+title: Kacie Wielgus | Speaker & Consultant
+collections:
+  excerpts:
+    output: true
+    permalink: /excerpts/:name/
+YML
+
+# create collection folder
+mkdir -p _excerpts
+
+# move files
+git mv chair _excerpts/chair.md
+git mv calling _excerpts/calling.md
+git mv hallway _excerpts/hallway.md
+git mv kw _excerpts/kw.md
+git mv packing _excerpts/packing.md
+git mv tax _excerpts/tax.md
+git mv waiting _excerpts/waiting.md
+
+# rename index
+git mv index excerpts.md
