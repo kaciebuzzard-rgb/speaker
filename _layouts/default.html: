@@ -4,9 +4,37 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ page.title | default: site.title }}</title>
-  {{ content_for_header }}
+  {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+  <link rel="stylesheet" href="/assets/site.css" />
 </head>
 <body>
-  {{ content }}
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav">
+      <div class="brand">
+        Kacie Wielgus (Buzzard)
+        <small>Speaker • Inclusion Consultant • Writer</small>
+      </div>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/#about">About</a>
+        <a href="/#speaking">Speaking</a>
+        <a href="/#services">Services</a>
+        <a href="/#excerpts">Excerpts</a>
+        <a href="/excerpts/">Read More</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content" class="wrap">
+    {{ content }}
+  </main>
+
+  <footer class="footer wrap">
+    © {{ "now" | date: "%Y" }} Kacie Wielgus (Buzzard) • <a href="/#top">Back to top</a><br/>
+    Email: <a href="mailto:kacie.buzzard@gmail.com">kacie.buzzard@gmail.com</a>
+  </footer>
 </body>
 </html>
