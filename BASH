@@ -24,3 +24,6 @@ git mv index excerpts.md
 git add index.html
 git commit -m "Remove Jekyll layout from index"
 git push
+git add _layouts/default.html index.html
+git commit -m "Add default layout"
+git push
