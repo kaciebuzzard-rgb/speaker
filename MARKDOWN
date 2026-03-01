@@ -1,6 +1,5 @@
 ---
-title: "Chair"
----
----
-title: "Waiting"
+title: Excerpts
+permalink: /excerpts/
+layout: default
 ---
