@@ -1,10 +1,122 @@
 ---
 layout: default
 title: "Kacie Wielgus (Buzzard) | Speaker & Inclusion Consultant"
+description: "Story-driven keynotes and practical workshops on caregiving, neurodiversity, leadership, and inclusive communication."
 ---
 
-# Kacie Wielgus (Buzzard)
+<div id="top"></div>
 
-Speaker • Thought Leader • Inclusion Consultant
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <h1>Kacie Wielgus (Buzzard)</h1>
 
-[Book Kacie to Speak](/#contact)
+      <p>
+        Human-centered communication at the intersection of caregiving, neurodiversity, leadership, and digital storytelling.
+        I deliver story-driven keynotes and practical workshops that help organizations lead with empathy and communicate with trust.
+      </p>
+
+      <div class="cta">
+        <a class="btn primary" href="#contact">Book Kacie to Speak</a>
+        <a class="btn" href="#services">Explore Services</a>
+      </div>
+
+      <div class="chips" aria-label="Topics">
+        <span class="chip">Human-Centered Communication</span>
+        <span class="chip">Invisible Labor of Caregiving</span>
+        <span class="chip">Inclusive Storytelling</span>
+        <span class="chip">Neurodiversity & Culture</span>
+        <span class="chip">Leadership in Complexity</span>
+      </div>
+    </div>
+
+    <aside class="hero-card" aria-label="Hero image and quick details">
+      <div class="hero-photo">
+        <!-- Put your real image at /assets/img/kacie-speaking.jpg -->
+        <img src="/assets/img/kacie-speaking.jpg" alt="Kacie speaking on stage" />
+      </div>
+
+      <div class="hero-side">
+        <h3>What you can expect</h3>
+        <ul>
+          <li>Keynotes that move a room and give people language.</li>
+          <li>Workshops with tools teams can use the next day.</li>
+          <li>Consulting that connects strategy, accessibility, and real community trust.</li>
+        </ul>
+        <div class="note">Email: <a href="mailto:kacie.buzzard@gmail.com">kacie.buzzard@gmail.com</a></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="about" class="block">
+  <h2>About</h2>
+  <p>
+    I’m a communications leader, speaker, and inclusion consultant with 16+ years of experience building digital engagement strategies for global brands,
+    healthcare systems, and mission-driven organizations.
+  </p>
+  <p>
+    My work bridges professional expertise and lived experience—helping organizations communicate with empathy, authenticity, and measurable impact while
+    elevating disability, caregiver, and neurodivergent voices.
+  </p>
+</section>
+
+<section id="speaking" class="block">
+  <h2>Speaking</h2>
+  <p>Story-driven keynotes that challenge audiences to rethink communication, leadership, and inclusion through a human-centered lens.</p>
+
+  <h3>Keynotes</h3>
+  <p>Conference sessions designed to connect emotionally and land strategically—grounded in real experience and practical takeaways.</p>
+
+  <h3>Workshops</h3>
+  <p>Interactive sessions for teams: inclusive storytelling, caregiver-aware culture, and communication that earns trust.</p>
+
+  <h3>Panels & Moderation</h3>
+  <p>Disability, caregiving, leadership, and brand/community trust—facilitated with clarity, warmth, and strong audience engagement.</p>
+</section>
+
+<section id="services" class="block">
+  <h2>Services</h2>
+
+  <h3>Speaking</h3>
+  <p>Keynotes, conferences, leadership events, and advocacy panels focused on communication, caregiving, and inclusion.</p>
+
+  <h3>Thought Leadership</h3>
+  <p>Executive LinkedIn strategy, storytelling frameworks, and brand voice development that builds credibility and community.</p>
+
+  <h3>Inclusion Consulting</h3>
+  <p>Helping organizations authentically engage disability, caregiver, and neurodivergent communities—with accessibility and trust built in.</p>
+</section>
+
+<section id="excerpts" class="block excerpts">
+  <h2>The Waiting Rooms of My Life</h2>
+  <p>Selected excerpts from my memoir-in-progress—about caregiving, resilience, and the rooms that change us.</p>
+
+  <blockquote>
+    I have learned more about myself in waiting rooms than anywhere else in my life. They are places where identity dissolves and survival quietly reshapes you.
+  </blockquote>
+  <blockquote>
+    Caregiving is not a moment of crisis. It is a long negotiation between love, endurance, and systems never designed for you to survive them.
+  </blockquote>
+  <blockquote>
+    Time moves forward. Trauma does not. The hallway changes. The fear remembers.
+  </blockquote>
+
+  <p><a class="btn" href="/excerpts/">Read all excerpts</a></p>
+</section>
+
+<section id="contact" class="block">
+  <h2>Contact</h2>
+  <p>Speaking inquiries, partnerships, and consulting: <a href="mailto:kacie.buzzard@gmail.com">kacie.buzzard@gmail.com</a></p>
+
+  <!-- Netlify form -->
+  <form name="speaking-inquiry" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="speaking-inquiry" />
+    <p><label>Name<br/><input name="name" required></label></p>
+    <p><label>Email<br/><input name="email" type="email" required></label></p>
+    <p><label>Organization<br/><input name="organization"></label></p>
+    <p><label>Event date (if known)<br/><input name="event_date"></label></p>
+    <p><label>Tell me about your event<br/><textarea name="message" required></textarea></label></p>
+    <p><button class="btn primary" type="submit">Send Inquiry</button></p>
+  </form>
+</section>
