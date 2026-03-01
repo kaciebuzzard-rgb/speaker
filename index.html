@@ -1,370 +1,191 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Kacie Wielgus (Buzzard) | Speaker & Inclusion Consultant</title>
-  <meta name="description" content="Kacie Wielgus (Buzzard) is a speaker and inclusion consultant focused on human-centered communication, caregiving, neurodiversity, and inclusive storytelling." />
-  <meta name="robots" content="index,follow" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Kacie Wielgus (Buzzard) | Speaker & Inclusion Consultant" />
-  <meta property="og:description" content="Human-centered communication at the intersection of caregiving, neurodiversity, leadership, and digital storytelling." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://kacies.life/" />
-  <!-- Optional: set an image when you have one -->
-  <!-- <meta property="og:image" content="https://kacies.life/assets/og.jpg" /> -->
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Kacie Wielgus (Buzzard) | Speaker & Inclusion Consultant" />
-  <meta name="twitter:description" content="Human-centered communication at the intersection of caregiving, neurodiversity, leadership, and digital storytelling." />
-  <!-- <meta name="twitter:image" content="https://kacies.life/assets/og.jpg" /> -->
-
-  <!-- Favicons (optional) -->
-  <!-- <link rel="icon" href="/favicon.ico" /> -->
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kacie Wielgus (Buzzard) | Speaker • Inclusion Consultant • Writer</title>
+  <meta name="description" content="Story-driven keynotes, practical workshops, and writing that helps organizations lead with empathy and communicate with trust." />
   <style>
     :root{
-      --accent:#e08a1d;
-      --text:#222;
-      --muted:#555;
-      --bg:#ffffff;
-      --bg-soft:#f7f7f7;
-      --bg-softer:#fafafa;
-      --card:#ffffff;
-      --shadow:0 6px 22px rgba(0,0,0,.08);
-      --radius:14px;
-      --max:1040px;
-      --navH:68px;
+      --bg:#0b0f14; --panel:#0f1620; --text:#eaf0f7; --muted:#b7c3d4;
+      --line:rgba(255,255,255,.10);
+      --brand:#7dd3fc; --brand2:#a78bfa;
+      --radius:18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --max: 1040px;
     }
-
-    *{box-sizing:border-box;}
-    html,body{height:100%;}
+    *{box-sizing:border-box}
     body{
-      margin:0;
-      font-family:'Open Sans',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
-      line-height:1.65;
-      scroll-behavior:smooth;
-      background:var(--bg);
+      background:
+        radial-gradient(900px 600px at 20% -10%, rgba(125,211,252,.25), transparent 60%),
+        radial-gradient(900px 600px at 80% -10%, rgba(167,139,250,.22), transparent 60%),
+        linear-gradient(180deg, #060a0f, #0b0f14 35%, #0b0f14);
     }
-
-    /* Accessibility */
-    .skip-link{
-      position:absolute;
-      left:-999px;
-      top:10px;
-      background:#000;
-      color:#fff;
-      padding:10px 12px;
-      border-radius:8px;
-      z-index:9999;
-    }
-    .skip-link:focus{left:10px;}
-
-    h1,h2,h3{
-      font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      line-height:1.15;
-      margin:0 0 12px;
-    }
-
-    p{margin:0 0 14px;}
-    a{color:var(--accent);text-decoration:none;font-weight:600;}
-    a:hover{text-decoration:underline;}
-
-    /* Layout */
-    .container{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:0 22px;
-    }
-
-    section{
-      padding:84px 0;
-      scroll-margin-top:calc(var(--navH) + 14px); /* prevents nav covering anchors */
-    }
-
-    /* Nav */
-    header{
-      position:fixed;
-      top:0; left:0; right:0;
-      background:#fff;
-      box-shadow:0 2px 10px rgba(0,0,0,.08);
-      z-index:1000;
-    }
-
-    nav{
-      height:var(--navH);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-    }
-
-    .brand{
-      display:flex;
-      flex-direction:column;
-      line-height:1.1;
-    }
-    .brand strong{font-family:'Montserrat'; font-size:15px;}
-    .brand span{font-size:12px; color:var(--muted); font-weight:600;}
-
-    .navlinks{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .navlinks a{font-weight:700; color:#222;}
-    .navlinks a:hover{color:var(--accent); text-decoration:none;}
-
-    /* Hero */
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px;}
+    .skip{position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden}
+    .skip:focus{left:24px; top:24px; width:auto; height:auto; padding:10px 12px; background:var(--panel); border:1px solid var(--line); border-radius:12px; z-index:999}
+    header{position:sticky; top:0; z-index:50; backdrop-filter: blur(10px); background:rgba(11,15,20,.65); border-bottom:1px solid var(--line)}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px; max-width:var(--max); margin:0 auto;}
+    .brand{font-weight:700; letter-spacing:.2px}
+    .brand small{display:block; font-weight:500; color:var(--muted); letter-spacing:.15px; margin-top:2px}
+    .links{display:flex; flex-wrap:wrap; gap:14px; font-weight:600; color:var(--muted)}
+    .links a{padding:8px 10px; border-radius:12px}
+    .links a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    main{padding:34px 0 60px}
     .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      background:var(--accent);
-      color:#fff;
-      padding-top:calc(var(--navH) + 28px);
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      overflow:hidden;
     }
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.35fr .65fr;
-      gap:26px;
-      align-items:center;
-    }
-    .hero h1{font-size:48px;}
-    .hero p{font-size:18px; max-width:720px;}
-
-    .cta-row{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:18px;
-    }
+    .hero-inner{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; padding:34px}
+    @media (max-width: 900px){ .hero-inner{grid-template-columns:1fr; padding:26px} }
+    .kicker{display:inline-flex; gap:10px; align-items:center; color:var(--muted); font-weight:700; letter-spacing:.2px}
+    .dot{width:8px; height:8px; border-radius:50%; background:linear-gradient(90deg, var(--brand), var(--brand2))}
+    h1{margin:14px 0 10px; font-size:clamp(32px, 4.2vw, 54px); line-height:1.05}
+    .sub{color:var(--muted); font-size: clamp(16px, 1.5vw, 18px); line-height:1.55; margin:0}
+    .cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:18px}
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:13px 18px;
-      border-radius:999px;
-      border:2px solid transparent;
-      font-weight:800;
-      cursor:pointer;
-      user-select:none;
-      text-decoration:none;
-      transition:transform .06s ease, opacity .2s ease;
-      white-space:nowrap;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px; border-radius:14px; font-weight:800;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
     }
-    .btn:active{transform:translateY(1px);}
-
-    .btn-primary{
-      background:#fff;
-      color:var(--accent);
+    .btn:hover{transform: translateY(-1px); background:rgba(255,255,255,.09)}
+    .btn.primary{
+      background: linear-gradient(90deg, rgba(125,211,252,.95), rgba(167,139,250,.95));
+      color:#0b0f14; border:none;
     }
-    .btn-primary:hover{opacity:.92;text-decoration:none;}
-
-    .btn-ghost{
-      background:transparent;
-      border-color:rgba(255,255,255,.9);
-      color:#fff;
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
+    .chip{padding:8px 10px; border-radius:999px; border:1px solid var(--line); background:rgba(255,255,255,.04); color:var(--muted); font-weight:700; font-size:13px}
+    .side{
+      border-left:1px solid var(--line);
+      padding-left:26px;
+      display:flex; flex-direction:column; justify-content:space-between;
     }
-    .btn-ghost:hover{opacity:.92;text-decoration:none;}
-
-    .hero-card{
-      background:rgba(255,255,255,.14);
-      border:1px solid rgba(255,255,255,.25);
-      border-radius:var(--radius);
-      padding:18px;
-    }
-    .hero-card h3{margin-bottom:10px;}
-    .mini{
-      font-size:14px;
-      opacity:.95;
-    }
-
-    /* About / Services / Excerpts */
-    .soft{background:var(--bg-soft);}
-    .softer{background:var(--bg-softer);}
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:18px;
-      margin-top:18px;
-    }
+    @media (max-width: 900px){ .side{border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:20px} }
     .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background:rgba(255,255,255,.04);
+      padding:16px;
+    }
+    .card h3{margin:0 0 8px; font-size:16px}
+    .card p{margin:0; color:var(--muted); line-height:1.6}
+    section{margin-top:26px}
+    .grid{display:grid; grid-template-columns: 1fr 1fr 1fr; gap:14px}
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+    .sec{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background:rgba(255,255,255,.03);
       padding:22px;
     }
-
-    .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:14px;
-    }
-    .chip{
-      display:inline-block;
-      padding:8px 12px;
-      border-radius:999px;
-      background:#fff;
-      border:1px solid rgba(0,0,0,.08);
-      font-weight:700;
-      font-size:13px;
-    }
-
+    .sec h2{margin:0 0 10px; font-size:22px}
+    .sec h4{margin:16px 0 6px; font-size:16px}
+    .sec p{margin:0; color:var(--muted); line-height:1.65}
     blockquote{
-      margin:18px 0;
-      padding:12px 16px;
-      border-left:4px solid var(--accent);
-      background:#fff;
-      border-radius:12px;
-      box-shadow:0 4px 14px rgba(0,0,0,.06);
-      font-style:italic;
+      margin:14px 0 0; padding:14px 16px;
+      border-left:3px solid rgba(125,211,252,.8);
+      background:rgba(125,211,252,.08);
+      border-radius: 12px;
+      color:#d8e6f7;
     }
-
-    /* Contact */
-    form{
-      margin-top:18px;
-      display:grid;
-      gap:12px;
-      max-width:720px;
-    }
-    label{font-weight:700;}
+    footer{border-top:1px solid var(--line); color:var(--muted); padding:24px 0 40px}
+    label{display:block; font-weight:800; margin:12px 0 6px}
     input, textarea{
-      width:100%;
-      padding:12px 12px;
-      border-radius:12px;
-      border:1px solid rgba(0,0,0,.14);
-      font:inherit;
+      width:100%; padding:12px 12px; border-radius:12px; border:1px solid var(--line);
+      background:rgba(255,255,255,.04); color:var(--text);
     }
-    textarea{min-height:140px; resize:vertical;}
-    .form-row{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-
-    .footer{
-      background:#222;
-      color:#fff;
-      padding:34px 0;
-      text-align:center;
-    }
-    .footer a{color:#fff; text-decoration:underline;}
-
-    .toplink{
-      display:inline-block;
-      margin-top:10px;
-      opacity:.9;
-    }
-
-    /* Mobile */
-    @media (max-width: 860px){
-      .hero-grid{grid-template-columns:1fr;}
-      .hero h1{font-size:40px;}
-    }
-    @media (max-width: 520px){
-      .hero h1{font-size:34px;}
-      .form-row{grid-template-columns:1fr;}
-      .navlinks{gap:12px;}
-    }
+    textarea{min-height:120px; resize:vertical}
+    .note{font-size:13px; color:var(--muted); margin-top:10px}
   </style>
 </head>
 
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip" href="#content">Skip to content</a>
 
-<header>
-  <div class="container">
-    <nav aria-label="Primary navigation">
+  <header>
+    <div class="nav" role="navigation" aria-label="Primary">
       <div class="brand">
-        <strong>Kacie Wielgus (Buzzard)</strong>
-        <span>Speaker • Inclusion Consultant</span>
+        Kacie Wielgus (Buzzard)
+        <small>Speaker • Inclusion Consultant • Writer</small>
       </div>
-
-      <div class="navlinks">
+      <nav class="links">
         <a href="#about">About</a>
         <a href="#speaking">Speaking</a>
         <a href="#services">Services</a>
+        <a href="#writing">Writing</a>
         <a href="#excerpts">Excerpts</a>
         <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </div>
-</header>
+      </nav>
+    </div>
+  </header>
 
-<main id="main">
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="container">
-      <div class="hero-grid">
+  <main id="content" class="wrap">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-inner">
         <div>
-          <h1>Kacie Wielgus (Buzzard)</h1>
-          <p>
-            Human-centered communication at the intersection of caregiving, neurodiversity, leadership, and digital storytelling.
-            I deliver story-driven keynotes and practical workshops that help organizations lead with empathy and communicate with trust.
+          <div class="kicker"><span class="dot" aria-hidden="true"></span> Human-centered communication</div>
+          <h1>Keynotes, consulting, and writing that give people language.</h1>
+          <p class="sub">
+            I work at the intersection of caregiving, neurodiversity, leadership, and digital storytelling—helping organizations
+            lead with empathy and communicate with trust.
           </p>
 
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#contact">Book Kacie to Speak</a>
-            <a class="btn btn-ghost" href="#services">Explore Services</a>
+          <div class="cta">
+            <a class="btn primary" href="#contact">Book Kacie to Speak</a>
+            <a class="btn" href="#services">Explore Services</a>
+            <a class="btn" href="#writing">Writing / Thought Leadership</a>
           </div>
 
-          <div class="chips" aria-label="Speaking topics">
-            <span class="chip">Human-Centered Communication</span>
+          <div class="chips" aria-label="Topics">
             <span class="chip">Invisible Labor of Caregiving</span>
             <span class="chip">Inclusive Storytelling</span>
             <span class="chip">Neurodiversity & Culture</span>
             <span class="chip">Leadership in Complexity</span>
+            <span class="chip">Community Trust</span>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Quick facts">
-          <h3>What you can expect</h3>
-          <p class="mini"><strong>Keynotes</strong> that move a room and give people language.</p>
-          <p class="mini"><strong>Workshops</strong> with tools teams can use the next day.</p>
-          <p class="mini"><strong>Consulting</strong> that connects strategy, accessibility, and real community trust.</p>
-          <p class="mini" style="margin-top:10px;"><strong>Email:</strong> <a href="mailto:kacie.buzzard@gmail.com" style="color:#fff;text-decoration:underline;">kacie.buzzard@gmail.com</a></p>
-        </aside>
-      </div>
-    </div>
-  </section>
+        <div class="side">
+          <div class="card">
+            <h3>What you can expect</h3>
+            <p><strong>Keynotes</strong> that move a room and land strategically.</p>
+            <p><strong>Workshops</strong> with tools teams can use the next day.</p>
+            <p><strong>Writing</strong> that sharpens voice and builds authority.</p>
+          </div>
 
-  <!-- ABOUT -->
-  <section id="about" class="soft">
-    <div class="container">
+          <div class="card">
+            <h3>Fast contact</h3>
+            <p>Email: <a href="mailto:kacie.buzzard@gmail.com">kacie.buzzard@gmail.com</a></p>
+            <p class="note">For events, include date + audience size + goal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="sec">
       <h2>About</h2>
       <p>
-        I’m a communications leader, speaker, and inclusion consultant with 16+ years of experience building digital engagement strategies for global brands,
-        healthcare systems, and mission-driven organizations.
+        I’m a communications leader, speaker, inclusion consultant, and writer with 16+ years of experience building digital engagement
+        strategies for global brands, healthcare systems, and mission-driven organizations.
       </p>
       <p>
-        My work bridges professional expertise and lived experience—helping organizations communicate with empathy, authenticity, and measurable impact while
-        elevating disability, caregiver, and neurodivergent voices.
+        My work bridges professional expertise and lived experience—helping teams communicate with empathy, authenticity, and measurable impact
+        while elevating disability, caregiver, and neurodivergent voices.
       </p>
-    </div>
-  </section>
+    </section>
 
-  <!-- SPEAKING -->
-  <section id="speaking">
-    <div class="container">
+    <section id="speaking" class="sec">
       <h2>Speaking</h2>
-      <p>
-        Story-driven keynotes that challenge audiences to rethink communication, leadership, and inclusion through a human-centered lens.
-      </p>
+      <p>Story-driven keynotes that challenge audiences to rethink communication, leadership, and inclusion through a human-centered lens.</p>
 
-      <div class="grid">
+      <div class="grid" style="margin-top:14px">
         <div class="card">
           <h3>Keynotes</h3>
           <p>Conference sessions designed to connect emotionally and land strategically—grounded in real experience and practical takeaways.</p>
@@ -375,110 +196,76 @@
         </div>
         <div class="card">
           <h3>Panels & Moderation</h3>
-          <p>Disability, caregiving, leadership, and brand/community trust—facilitated with clarity, warmth, and strong audience engagement.</p>
+          <p>Disability, caregiving, leadership, and community trust—facilitated with clarity, warmth, and strong audience engagement.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="soft">
-    <div class="container">
+    <section id="services" class="sec">
       <h2>Services</h2>
 
-      <div class="grid">
-        <div class="card">
-          <h3>Speaking</h3>
-          <p>Keynotes, conferences, leadership events, and advocacy panels focused on communication, caregiving, and inclusion.</p>
-        </div>
+      <h4>Speaking</h4>
+      <p>Keynotes, conferences, leadership events, and advocacy panels focused on communication, caregiving, and inclusion.</p>
 
-        <div class="card">
-          <h3>Thought Leadership</h3>
-          <p>Executive LinkedIn strategy, storytelling frameworks, and brand voice development that builds credibility and community.</p>
-        </div>
+      <h4>Inclusion Consulting</h4>
+      <p>Helping organizations authentically engage disability, caregiver, and neurodivergent communities—with accessibility and trust built in.</p>
+    </section>
 
-        <div class="card">
-          <h3>Inclusion Consulting</h3>
-          <p>Helping organizations authentically engage disability, caregiver, and neurodivergent communities—with accessibility and trust built in.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section id="writing" class="sec">
+      <h2>Writing & Thought Leadership</h2>
+      <p>
+        Voice, messaging, and narrative systems that make your ideas easier to repeat—and harder to ignore.
+        This can include keynote scripts, executive LinkedIn direction, and longform storytelling.
+      </p>
+    </section>
 
-  <!-- EXCERPTS -->
-  <section id="excerpts" class="softer">
-    <div class="container">
+    <section id="excerpts" class="sec">
       <h2>The Waiting Rooms of My Life</h2>
       <p>Selected excerpts from my memoir-in-progress—about caregiving, resilience, and the rooms that change us.</p>
-
       <blockquote>
         I have learned more about myself in waiting rooms than anywhere else in my life. They are places where identity dissolves and survival quietly reshapes you.
       </blockquote>
-
       <blockquote>
         Caregiving is not a moment of crisis. It is a long negotiation between love, endurance, and systems never designed for you to survive them.
       </blockquote>
-
       <blockquote>
         Time moves forward. Trauma does not. The hallway changes. The fear remembers.
       </blockquote>
+    </section>
 
-      <!-- If you later add a real excerpts page, link it here -->
-      <!-- <p><a href="/excerpts/">Read all excerpts →</a></p> -->
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
+    <section id="contact" class="sec">
       <h2>Contact</h2>
       <p>Speaking inquiries, partnerships, and consulting: <a href="mailto:kacie.buzzard@gmail.com">kacie.buzzard@gmail.com</a></p>
 
-      <!-- Netlify Form: works automatically when deployed on Netlify -->
+      <!-- Netlify form (matches your build log: speaking-inquiry) -->
       <form name="speaking-inquiry" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="speaking-inquiry" />
 
-        <div class="form-row">
-          <div>
-            <label for="name">Name</label>
-            <input id="name" name="name" autocomplete="name" required />
-          </div>
+        <label for="name">Name</label>
+        <input id="name" name="name" autocomplete="name" required />
 
-          <div>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
-          </div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+
+        <label for="organization">Organization</label>
+        <input id="organization" name="organization" autocomplete="organization" />
+
+        <label for="event_date">Event date (if known)</label>
+        <input id="event_date" name="event_date" />
+
+        <label for="message">Tell me about your event</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <div class="cta" style="margin-top:14px">
+          <button class="btn primary" type="submit">Send Inquiry</button>
         </div>
-
-        <div class="form-row">
-          <div>
-            <label for="org">Organization</label>
-            <input id="org" name="organization" autocomplete="organization" />
-          </div>
-
-          <div>
-            <label for="date">Event date (if known)</label>
-            <input id="date" name="event_date" placeholder="MM/DD/YYYY" />
-          </div>
-        </div>
-
-        <div>
-          <label for="message">Tell me about your event</label>
-          <textarea id="message" name="message" required placeholder="Audience, goals, format (keynote/workshop/panel), location, budget range, and timeline."></textarea>
-        </div>
-
-        <button class="btn btn-primary" type="submit">Send Inquiry</button>
       </form>
-    </div>
-  </section>
-</main>
+    </section>
 
-<footer class="footer">
-  <div class="container">
-    <p>© 2026 Kacie Wielgus (Buzzard) • <a href="#top">Back to top</a></p>
-    <p class="toplink">Email: <a href="mailto:kacie.buzzard@gmail.com">kacie.buzzard@gmail.com</a></p>
-  </div>
-</footer>
-
+    <footer class="wrap">
+      © 2026 Kacie Wielgus (Buzzard) • <a href="#content">Back to top</a><br/>
+      Email: <a href="mailto:kacie.buzzard@gmail.com">kacie.buzzard@gmail.com</a>
+    </footer>
+  </main>
 </body>
 </html>
